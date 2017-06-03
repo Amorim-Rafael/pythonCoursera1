@@ -1,22 +1,16 @@
 n = int(input("Digite o numero de n: "))
 k = int(input("Digite o numero de k: "))
 
-def calcula_fatorial(n): 
-    num_fat = 1
+def fatorial(n): 
+    fat = 1
     while n > 0:
-        num_fat *= n
+        fat *= n
         n -= 1    
-    return num_fat
+    return fat
 
-def calcula_binomial(n, k):
-    n_fat = calcula_fatorial(n)
-    k_fat = calcula_fatorial(k)
-    sub = (n - k)
-    sub_fat = calcula_fatorial(sub)    
-    num_binomial = n_fat / (k_fat * sub_fat)
+def numero_binomial(n, k):
+    return fatorial(n) // (fatorial(k) * (fatorial(n - k)))
 
-    return int(num_binomial)
-
-print(calcula_binomial(n,k))    
+print(numero_binomial(n,k))    
 
   
